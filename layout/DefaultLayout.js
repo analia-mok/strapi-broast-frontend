@@ -8,7 +8,7 @@ export default class DefaultLayout extends Component {
         <Head>
           <title>Hello World</title>
         </Head>
-        {this.props.children}
+        <header>{this.props.children}</header>
       </>
     );
   }
