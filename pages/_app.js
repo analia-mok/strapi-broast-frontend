@@ -3,6 +3,9 @@ import App from 'next/app';
 import '../css/main.css';
 import Head from 'next/head';
 
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
