@@ -1,5 +1,5 @@
 import React from 'react';
-import CoffeeListItem from './CoffeeListItem';
+import CoffeeListItem from '@/components/CoffeeListItem';
 
 export default function CoffeeListing({ coffees }) {
   // TODO:
@@ -14,8 +14,11 @@ export default function CoffeeListing({ coffees }) {
         {coffees &&
           coffees.map((coffee) => {
             return (
-              <div className="w-1/3 flex-grow flex-shrink px-2 mb-4">
-                <CoffeeListItem key={coffee.id} coffee={coffee} />
+              <div
+                key={`coffee_${coffee.id}`}
+                className="w-full md:w-1/2 lg:w-1/3 flex-grow flex-shrink px-2 mb-4"
+              >
+                <CoffeeListItem coffee={coffee} />
               </div>
             );
           })}

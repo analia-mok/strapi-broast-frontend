@@ -1,6 +1,4 @@
 const fetch = require('node-fetch');
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 
 exports.handler = async () => {
   const response = await fetch(`${process.env.STRAPI_PROD_URL}/coffees`, {

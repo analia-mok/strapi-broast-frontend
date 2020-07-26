@@ -1,7 +1,7 @@
-import fetch from 'node-fetch';
 import Head from 'next/head';
-import DefaultLayout from '../layout/DefaultLayout';
-import CoffeeListing from '../components/CoffeeListing';
+import DefaultLayout from '@/layout/DefaultLayout';
+import CoffeeListing from '@/components/CoffeeListing';
+import { getCoffee } from '@/lib/utils';
 
 export default function HomePage({ coffees }) {
   return (
@@ -20,16 +20,11 @@ export default function HomePage({ coffees }) {
 }
 
 export async function getStaticProps() {
-  // TODO: Move to lib
-  const coffees = await fetch(
-    `${process.env.NEXT_BASE_URL}/.netlify/functions/load-coffee`
-  )
-    .then((res) => res.json())
-    .catch((err) => console.error(err));
+  const coffees = await getCoffee();
 
   return {
     props: {
-      coffees,
+      coffees: coffees || [],
     },
   };
 }
