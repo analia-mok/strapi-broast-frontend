@@ -10,7 +10,7 @@ export default function HomePage({ coffees }) {
         <title>Strapi Broast</title>
       </Head>
       <DefaultLayout>
-        <header className="container mx-auto mb-8">
+        <header className="container mx-auto mb-8 px-4">
           <h1 className="font-bold text-5xl">All Coffee</h1>
         </header>
         <CoffeeListing coffees={coffees} />

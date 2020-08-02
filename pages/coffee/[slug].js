@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { getCoffee, findCoffee } from '@/lib/utils';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -9,12 +10,21 @@ export default function Coffee({ coffee }) {
     ? coffee.thumbnail.formats.medium.url
     : coffee.thumbnail.url;
 
-  console.log(coffee);
+  const router = useRouter();
+
   return (
     <DefaultLayout>
       <Head>
         <title>{coffee.name} | Strapi Broast</title>
       </Head>
+      <div className="container mx-auto px-4">
+        <span
+          onClick={() => router.back()}
+          className="cursor-pointer hover:underline"
+        >
+          &lt; Back
+        </span>
+      </div>
       <article>
         <section className="container mt-8 mx-auto">
           <div className="flex flex-wrap lg:items-center">

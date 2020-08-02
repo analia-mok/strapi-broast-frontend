@@ -16,7 +16,7 @@ export default function CoffeeListing({ coffees }) {
             return (
               <div
                 key={`coffee_${coffee.id}`}
-                className="w-full md:w-1/2 lg:w-1/3 flex-grow flex-shrink px-2 mb-4"
+                className="w-full md:w-1/2 lg:w-1/3 flex-grow flex-shrink px-4 mb-4 md:px-2"
               >
                 <CoffeeListItem coffee={coffee} />
               </div>
